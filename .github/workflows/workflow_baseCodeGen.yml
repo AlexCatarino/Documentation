@@ -7,7 +7,7 @@ on:
       script-name:
         required: true
         type: string
-        default: 'API-Reference-Code-Generator.py'
+        default: 'API-Reference-Code-Generator'
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
           pip install numpy==1.22.3
           pip install pandas==1.4.2
 
-      - name: Run API Reference Code Generator Python Script
+      - name: Run ${{ inputs.script-name }} Python Script
         run: |- 
           python code-generators/${{ inputs.script-name }}.py
           git diff

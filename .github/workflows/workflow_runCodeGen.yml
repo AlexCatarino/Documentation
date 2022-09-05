@@ -6,8 +6,14 @@ on:
   workflow_dispatch:  # Run on manual trigger
 
 jobs:
-  build:
+  org-api-ref:
     uses: ./.github/workflows/workflow_baseCodeGen.yml
     with:
       script-name: API-Reference-Code-Generator
+    secrets: inherit
+
+  wa-api-ref:
+    uses: ./.github/workflows/workflow_baseCodeGen.yml
+    with:
+      script-name: Writing-Algorithm-API-Ref-Code-Generator
     secrets: inherit
