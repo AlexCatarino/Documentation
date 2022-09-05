@@ -1,0 +1,36 @@
+name: Run All Code Generators
+
+on:
+  workflow_call:
+    inputs:
+      # pass in environment through manual trigger, if not passed in, default to 'dev'
+      script-name:
+        required: true
+        type: string
+        default: 'API-Reference-Code-Generator.py'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy==1.22.3
+          pip install pandas==1.4.2
+
+      - name: Run API Reference Code Generator Python Script
+        run: |- 
+          python code-generators/${{ inputs.script-name }}.py
+          git diff
+
+      - name: Commit and Push
+        run: |-
+          git config --global user.email "actions@users.noreply.github.com"
+          git config --global user.name "GitHub Actions"
+          git add -A
+          git commit --allow-empty -m "Code Generation from code generators"
+          git push
