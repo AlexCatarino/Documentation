@@ -1,10 +1,8 @@
-<p>You must set up unit tests for your dataset before you test the processed data.</p>
-
 <p>Follow these steps to test if your demonstration algorithm will run in production with the processed data:</p>
 
 <ol>
-    <li>Copy the contents of the <span class='private-file-name'>Lean.DataSource.&lt;vendorNameDatasetName&gt;/output</span> directory and paste them into the <span class='private-directory-name'>Lean/Data</span> directory.</li>
-    <li>Copy the <span class='private-file-name'>Lean.DataSource.&lt;vendorNameDatasetName&gt;/&lt;vendorNameDatasetName&gt;Algorithm.cs</span> file and paste it in the <span class='private-file-name'>Lean/Algorithm.CSharp</span> directory. </li>
+    <li><a href="/docs/v2/lean-cli/datasets/local-data">Create a C# project</a>.</li>
+    <li>Copy the <span class='private-file-name'>Lean.DataSource.&lt;vendorNameDatasetName&gt;/&lt;vendorNameDatasetName&gt;Algorithm.cs</span> file and paste it in the directory of the newly created project.</li>
     <li>Open the <span class='private-file-name'>Lean.DataSource.&lt;vendorNameDatasetName&gt;/QuantConnect.DataSource.csproj</span> file in Visual Studio.</li>
     <li>In the top menu bar of Visual Studio, click <span class='menu-name'>Build > Build Solution</span>.</li>
     <p>The Output panel displays the build status of the project.</p>
