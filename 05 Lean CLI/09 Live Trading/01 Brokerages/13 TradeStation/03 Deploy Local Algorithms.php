@@ -14,7 +14,7 @@ Will sleep 5 seconds and retry fetching authorization...
 </div>
 </li>
 
-<li>Enter the TradeStation account ID.
+<li>Enter the <a href='https://qnt.co/tradestation-signup'>TradeStation</a> account ID.
 <div class='cli section-example-container'>
 <pre>$ lean live \"My Project\"
 The TradeStation account Id (11810357, 210NKH33, SIM2829935F, SIM2829934M): SIM2829935F</pre>

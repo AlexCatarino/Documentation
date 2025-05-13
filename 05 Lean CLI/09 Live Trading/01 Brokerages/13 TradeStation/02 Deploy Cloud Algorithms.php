@@ -2,7 +2,7 @@
 $brokerageName = "TradeStation";
 $dataProviderName=$brokerageName;
 $brokerageDetails = "
-<li>In the browser window that automatically opens, log in to your TradeStation account.
+<li>In the browser window that automatically opens, log in to your <a href='https://qnt.co/tradestation-signup'>TradeStation</a> account.
 
 <div class='cli section-example-container'>
 <pre>$ lean cloud live \"My Project\" --push --open
