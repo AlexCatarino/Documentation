@@ -10,7 +10,11 @@ The Upcoming Dividends dataset allows traders to trade the price change due to d
 <p>The following example algorithm shorts each equity in equal size with an upcoming dividend by the next day. It selects stocks with dividend recording over $0.5 per share to capitalize on the price shock momentum due to dividend payment.</p>
 
 <div class="section-example-container testable">
-<pre class="python">class UpcomingDividendsExampleAlgorithm(QCAlgorithm):
+<pre class="python">from AlgorithmImports import *
+
+
+class UpcomingDividendsExampleAlgorithm(QCAlgorithm):
+
     def initialize(self) -&gt; None:
         self.set_start_date(2024, 9, 1)
         self.set_end_date(2024, 12, 31)
@@ -66,7 +70,11 @@ The Upcoming Dividends dataset allows traders to trade the price change due to d
 <p>The following example implements a strategy of shorting each equity in equal size with an upcoming dividend by the next day using the framework. It selects stocks with dividend recording over $0.5 per share to capitalize on the price shock momentum due to dividend payment.</p>
 
 <div class="section-example-container testable">
-<pre class="python">class UpcomingDividendsExampleAlgorithm(QCAlgorithm):
+<pre class="python">from AlgorithmImports import *
+
+
+class UpcomingDividendsExampleAlgorithm(QCAlgorithm):
+
     def initialize(self) -&gt; None:
         self.set_start_date(2024, 9, 1)
         self.set_end_date(2024, 12, 31)

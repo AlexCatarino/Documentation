@@ -11,7 +11,7 @@ The Brain Sentiment Indicator dataset enables you to incorporate sentiment from 
 
 <div class="section-example-container testable">
 <pre class="python">from AlgorithmImports import *
-from QuantConnect.DataSource import *
+
 
 class BrainSentimentDataAlgorithm(QCAlgorithm):
     
@@ -108,7 +108,7 @@ class BrainSentimentDataAlgorithm(QCAlgorithm):
 
         // Ensure we have security data in the current slice to avoid stale fill
         // Buy if sentiment increase, liquidate otherwise to ride on the popularity of the equity
-        if (slice.Bar.ContainsKey(_symbol) &amp;&amp; _targetHoldings == 1 != Portfolio.Invested)
+        if (slice.Bars.ContainsKey(_symbol) &amp;&amp; _targetHoldings == 1 != Portfolio.Invested)
         {
             SetHoldings(_symbol, _targetHoldings);
         }
@@ -120,7 +120,7 @@ class BrainSentimentDataAlgorithm(QCAlgorithm):
 
 <div class="section-example-container testable">
 <pre class="python">from AlgorithmImports import *
-from QuantConnect.DataSource import *
+
 
 class BrainSentimentDataAlgorithm(QCAlgorithm):
     def initialize(self) -&gt; None:

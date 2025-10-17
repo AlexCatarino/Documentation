@@ -10,7 +10,10 @@ The Upcoming Splits dataset provides timely notifications about upcoming share s
 <p>The following example algorithm holds each equity in equal size with upcoming splits within 7 days. It selects stocks that split up to more shares with lower price and tries to capitalize the higher demand of the more afforable stocks.</p>
 
 <div class="section-example-container testable">
-<pre class="python">class UpcomingSplitsExampleAlgorithm(QCAlgorithm):
+<pre class="python">from AlgorithmImports import *
+
+
+class UpcomingSplitsExampleAlgorithm(QCAlgorithm):
     def initialize(self) -&gt; None:
         self.set_start_date(2024, 9, 1)
         self.set_end_date(2024, 12, 31)
@@ -84,7 +87,10 @@ The Upcoming Splits dataset provides timely notifications about upcoming share s
 <p>The following example algorithm holds each equity in equal size with upcoming splits within 7 days using algorithm framework. It selects stocks that split up to more shares with lower price and tries to capitalize the higher demand of the more afforable stocks.</p>
 
 <div class="section-example-container testable">
-<pre class="python">class UpcomingSplitsExampleAlgorithm(QCAlgorithm):
+<pre class="python">from AlgorithmImports import *
+
+
+class UpcomingSplitsExampleAlgorithm(QCAlgorithm):
     def initialize(self) -&gt; None:
         self.set_start_date(2024, 9, 1)
         self.set_end_date(2024, 12, 31)

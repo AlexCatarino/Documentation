@@ -10,6 +10,7 @@
 <div class="section-example-container testable">
 <pre class="python">from AlgorithmImports import *
 
+
 class USEnergyDataAlgorithm(QCAlgorithm):
 
     def initialize(self) -&gt; None:
@@ -106,6 +107,7 @@ class USEnergyDataAlgorithm(QCAlgorithm):
 <div class="section-example-container testable">
 <pre class="python">from AlgorithmImports import *
 
+
 class USEnergyDataAlgorithm(QCAlgorithm):
 
     def initialize(self) -&gt; None:
@@ -121,6 +123,7 @@ class USEnergyDataAlgorithm(QCAlgorithm):
         self.add_alpha(USEnergyAlphaModel(self))
         # Equally invest to dissipate non-systematic capital concentration risk on individual stock
         self.set_portfolio_construction(EqualWeightingPortfolioConstructionModel())
+
 
 class USEnergyAlphaModel(AlphaModel):
     
