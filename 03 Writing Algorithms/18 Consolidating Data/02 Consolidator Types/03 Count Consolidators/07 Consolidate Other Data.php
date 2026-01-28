@@ -4,4 +4,5 @@ include(DOCS_RESOURCES."/consolidators/consolidator-format-info/dynamic-data-def
 $dataFormatInfo = new DynamicDataConsolidatorFormatInfo();
 $consolidatorInfo = new CountConsolidatorInfo(10);
 include(DOCS_RESOURCES."/consolidators/manage-consolidators.php");
+include(DOCS_RESOURCES."/consolidators/base-data-consolidator.html");
 ?>

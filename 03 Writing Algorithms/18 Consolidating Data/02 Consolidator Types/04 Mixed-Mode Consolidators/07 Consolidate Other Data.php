@@ -17,4 +17,5 @@ $consolidatorInfo = new MixedModeConsolidatorInfo($numSamples,
 	$consolidationTextReceiveTime2);
 
 include(DOCS_RESOURCES."/consolidators/manage-consolidators.php");
+include(DOCS_RESOURCES."/consolidators/base-data-consolidator.html");
 ?>

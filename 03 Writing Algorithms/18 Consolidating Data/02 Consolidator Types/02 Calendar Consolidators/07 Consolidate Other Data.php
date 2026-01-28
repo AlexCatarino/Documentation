@@ -11,4 +11,5 @@ $shortCutTickTypeArgPy = "";
 $consolidatorInfo = new CalendarConsolidatorInfo($createConsolidatorExtraArgsC, $createConsolidatorExtraArgsPy, $shortCutTickTypeArgC, $shortCutTickTypeArgPy);
 
 include(DOCS_RESOURCES."/consolidators/manage-consolidators.php");
+include(DOCS_RESOURCES."/consolidators/base-data-consolidator.html");
 ?>

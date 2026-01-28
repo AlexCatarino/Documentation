@@ -38,4 +38,5 @@ $consolidatorInfo = new TimePeriodConsolidatorInfo($timeSpanPeriod,
 	$shortCutTickTypeArg);
 
 include(DOCS_RESOURCES."/consolidators/manage-consolidators.php");
+include(DOCS_RESOURCES."/consolidators/base-data-consolidator.html");
 ?>
