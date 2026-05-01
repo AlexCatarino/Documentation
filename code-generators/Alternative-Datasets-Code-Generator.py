@@ -85,41 +85,11 @@ def _parse_content(content):
 ALT_UNIVERSE_SKILL_PATH = 'skill-templates/universes/equity/alternative-data-universes/SKILL.md'
 
 ALT_UNIVERSE_SKILL_DESCRIPTION = (
-    "Use when selecting a dynamic Equity universe from an alternative-data class in a "
-    "QuantConnect/LEAN algorithm — calling py`add_universe(<AltClass>, selector)`"
-    "cs`AddUniverse<AltClass>(selector)` with Brain, CoinGecko, EOD Historical Data, "
-    "Quiver Quantitative, or Smart Insider universe classes. "
-    "Triggers — questions like \"which class do I pass to add_universe for Brain sentiment / "
-    "Quiver insider trades / Smart Insider buybacks / EODHD upcoming earnings / "
-    "CoinGecko market cap\", missing-class compile errors on names like "
-    "`BrainSentimentIndicatorUniverse` or `EODHDUpcomingEarnings`. "
-    "Skip when — the universe is Morningstar Fundamental (use `fundamental-universes`), "
-    "ETF constituents (use py`self.universe.etf(...)`cs`Universe.ETF(...)`), or pure "
-    "indicator-driven selection (use `indicator-universes`)."
+    "Use when selecting a dynamic Equity universe from QuantConnect/LEAN alternative-data "
+    "classes with py`add_universe(<AltClass>, selector)`cs`AddUniverse<AltClass>(selector)`. "
+    "Covers Brain, CoinGecko, EODHD, Quiver Quantitative, and Smart Insider universes. "
+    "Skip for Morningstar fundamentals, ETF constituents, or pure indicator-driven universes."
 )
-
-def _alt_universe_snippet(cls):
-    return f"""```python
-def initialize(self) -> None:
-    self._universe = self.add_universe({cls}, self.universe_selection)
-
-def universe_selection(self, alt_coarse: List[{cls}]) -> List[Symbol]:
-    return Universe.UNCHANGED
-```
-
-```csharp
-private Universe _universe;
-
-public override void Initialize()
-{{
-    _universe = AddUniverse<{cls}>(UniverseSelection);
-}}
-
-private IEnumerable<Symbol> UniverseSelection(IEnumerable<{cls}> altCoarse)
-{{
-    return Universe.Unchanged;
-}}
-```"""
 
 def _build_alt_universe_skill(skill_data):
     parts = [
@@ -128,19 +98,16 @@ def _build_alt_universe_skill(skill_data):
         f"description: {ALT_UNIVERSE_SKILL_DESCRIPTION}",
         "---",
         "",
-        "# Available Alternative Data Universes",
-        "",
-        "The snippets below show how to call py`add_universe(<AltClass>, selector)`"
-        "cs`AddUniverse<AltClass>(selector)` with each alternative-data universe class. "
-        "Replace py`Universe.UNCHANGED`cs`Universe.Unchanged` with your selection logic.",
+        "# Alternative Data Universe Classes",
         "",
     ]
+    seen = set()
     for dataset_name, classes in skill_data:
-        parts.append(f"## {dataset_name}")
-        parts.append("")
         for cls in classes:
-            parts.append(_alt_universe_snippet(cls))
-            parts.append("")
+            if cls in seen:
+                continue
+            seen.add(cls)
+            parts.append(f"- `{cls}` — {dataset_name}")
     return "\n".join(parts).rstrip() + "\n"
 
 
