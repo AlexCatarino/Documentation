@@ -21,7 +21,7 @@ jobs:
         run: python3 skill-templates/bundle-skills.py
 
       - name: Zip
-        run: zip -r llm_content.zip skills/ project-templates/
+        run: zip -r llm-content.zip skills/ project-templates/
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v6
@@ -31,7 +31,7 @@ jobs:
           aws-region: us-west-1
 
       - name: Upload content to S3
-        run: aws s3 cp llm_content.zip s3://cdn.quantconnect.com/skills/llm_content-latest.zip --acl bucket-owner-full-control
+        run: aws s3 cp llm-content.zip s3://cdn.quantconnect.com/llm-content/llm-content-latest.zip --acl bucket-owner-full-control
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
