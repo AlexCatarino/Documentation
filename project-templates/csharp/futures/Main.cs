@@ -99,8 +99,6 @@ public class BasicFutureAlgorithm : QCAlgorithm
 
             // Rolling over: to liquidate any position of the old mapped contract and switch to the newly mapped contract
             var tag = $"Rollover - Symbol changed at {Time}: {oldSymbol.Value} -> {newSymbol.Value}";
-            Log(tag);
-
             Liquidate(symbol: oldSymbol, tag: tag);
             if (quantity != 0) MarketOrder(newSymbol, quantity, tag: tag);
         }
