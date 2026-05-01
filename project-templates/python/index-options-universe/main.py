@@ -11,7 +11,7 @@ class IndexOptionAlgorithm(QCAlgorithm):
         # Subscribe to the Option chain.
         self._option = self.add_index_option("SPX", "SPXW")
         # Filter the Option universe to only select 0DTE Options.
-        self._option.set_filter(lambda u: u.include_weeklys().expiration(0, 0).strikes(-1, 1))
+        self._option.set_filter(lambda u: u.expiration(0, 0).strikes(-1, 1))
         # Filter the Option universe by Delta. The last set_filter call prevails.
         # self._option.set_filter(lambda u: u.delta(0.25, 0.75))
 

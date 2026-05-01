@@ -36,15 +36,11 @@ class EmaCrossUniverseSelectionAlgorithm(QCAlgorithm):
         self.set_warm_up(400, Resolution.DAILY)
 
     def on_data(self, data):
-        # we'll simply go long each security we added to the universe
+        # we'll simply go long each security in the universe
         targets = [PortfolioTarget(x, self._target_percent) 
             for x in self._universe.selected if self.securities[x].has_data]
-        self.set_holdings(targets)
-    
-    def on_securities_changed(self, changes):
-        # liquidate securities removed from our universe
-        securities = [x for x in changes.removed_securities if x.invested]
-        self.liquidate(securities, tag="Removed from Universe")
+        self.set_holdings(targets, True)
+        
 
 # class used to improve readability of the fundamental selection function
 class SelectionData:
