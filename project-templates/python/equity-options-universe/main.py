@@ -12,7 +12,7 @@ class EquityOptionAlgorithm(QCAlgorithm):
         self._option = self.add_option("SPY")
         # Using Staddle() method, it will only return the best-matched ATM call and put contracts expiring after 30 days.
         # It provides better accuracy in filtering, and subscribe only to the needed contracts to save computation resources.
-        self._option.set_filter(lambda u: u.include_weeklys().straddle(30))
+        self._option.set_filter(lambda u: u.straddle(30))
 
     def on_data(self, data):
         if self.portfolio.invested:
