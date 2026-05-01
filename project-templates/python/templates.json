@@ -5,37 +5,37 @@
 			"name": "Equities Static Universe",
 			"folder": "equities-static-universe",
 			"description": "Simple template with a fixed list of assets, indicators, and a scheduled event.",
-			"tags": ["indicators", "scheduled-event", "equity"]
+			"tags": ["us-equities", "indicators", "scheduled-event"]
 		},
 		{
 			"name": "Equities Universe",
 			"folder": "equities-universe",
 			"description": "Fundamental universe selecting top undervalued large-caps ranked by an EMA100/EMA300 cross, rebalanced daily.",
-			"tags": ["universe", "fundamentals", "indicators", "equity"]
+			"tags": ["us-equities", "universe", "fundamentals", "indicators"]
 		},
 		{
 			"name": "Chained Universe",
 			"folder": "chained-universe",
 			"description": "Chains an ETF-constituents universe (QQQ) into a fundamental PE filter to select the most undervalued stocks.",
-			"tags": ["universe", "chained-universe", "fundamentals", "etf"]
+			"tags": ["us-equities", "universe", "chained-universe", "fundamentals", "etf"]
 		},
 		{
 			"name": "History and ETF Universe",
 			"folder": "history-and-etf-universe",
 			"description": "Selects QQQ constituents, ranks them by a daily ATR, and rebalances using ETF weights.",
-			"tags": ["etf", "universe", "indicators", "history"]
+			"tags": ["us-equities", "etf", "universe", "indicators", "history"]
 		},
 		{
 			"name": "Intraday Indicator Scans",
 			"folder": "intraday-indicator-scans",
 			"description": "Scans QQQ constituents every 15 minutes with a minute-resolution ATR to select the most volatile constituents intraday.",
-			"tags": ["universe", "etf", "intraday", "indicators"]
+			"tags": ["us-equities", "universe", "etf", "intraday", "indicators"]
 		},
 		{
 			"name": "Custom Indicator",
 			"folder": "custom-indicator",
 			"description": "Implements a custom Money Flow Index indicator and trades SPY on its signals.",
-			"tags": ["custom-indicator", "indicators", "equity"]
+			"tags": ["us-equities", "custom-indicator", "indicators", "equity"]
 		},
 		{
 			"name": "Custom Consolidators",
@@ -53,13 +53,13 @@
 			"name": "Custom Data with Ticker Mapping",
 			"folder": "custom-data-ticker-mapping",
 			"description": "Loads custom data tied to an Equity whose ticker changed (FB to META) using point-in-time SecurityIdentifier mapping from the Object Store.",
-			"tags": ["custom-data", "ticker-mapping", "object-store"]
+			"tags": ["us-equities", "custom-data", "ticker-mapping", "object-store"]
 		},
 		{
 			"name": "Custom Models",
 			"folder": "custom-models",
 			"description": "Replaces the default fee, fill, slippage, and buying-power models through a security initializer.",
-			"tags": ["reality-models", "fee-model", "fill-model", "slippage"]
+			"tags": ["us-equities", "reality-models", "fee-model", "fill-model", "slippage"]
 		},
 		{
 			"name": "Forex",
@@ -101,37 +101,37 @@
 			"name": "Equity Options Static",
 			"folder": "equity-options-static",
 			"description": "Trades a fixed SPY Equity Option chain, constructing and rebalancing a covered call on a weekly schedule.",
-			"tags": ["options", "equity-options", "covered-call", "scheduled-event"]
+			"tags": ["equity-options", "equity-options", "covered-call", "scheduled-event"]
 		},
 		{
 			"name": "Equity Options Universe",
 			"folder": "equity-options-universe",
 			"description": "Filters SPY weekly Equity Options to ATM calls and puts and executes a long straddle.",
-			"tags": ["options", "equity-options", "straddle", "option-strategies"]
+			"tags": ["equity-options", "equity-options", "straddle", "option-strategies"]
 		},
 		{
 			"name": "Index Options Static",
 			"folder": "index-options-static",
 			"description": "Trades SPX Index Options, buying the ATM contract with the closest expiration.",
-			"tags": ["options", "index-options", "spx", "option-chain"]
+			"tags": ["index-options", "index-options", "spx", "option-chain"]
 		},
 		{
 			"name": "Index Options Universe",
 			"folder": "index-options-universe",
 			"description": "Filters the SPXW Index Option chain to 0DTE strikes near ATM and buys the call with the lower strike.",
-			"tags": ["options", "index-options", "option-filter", "0dte"]
+			"tags": ["index-options", "index-options", "option-filter", "0dte"]
 		},
 		{
 			"name": "Intraday Index Options Selection",
 			"folder": "intraday-index-options-selection",
 			"description": "Loads the SPX weekly chain daily and re-filters ATM calls every 5 minutes to trade as contracts update intraday.",
-			"tags": ["options", "index-options", "intraday", "0dte"]
+			"tags": ["index-options", "index-options", "intraday", "0dte"]
 		},
 		{
 			"name": "Intraday Greeks-Based Options Selection",
 			"folder": "intraday-greeks-based-options-selection",
 			"description": "Selects RUT Index Options intraday by target delta from EMA-driven signals with paced order submission.",
-			"tags": ["options", "index-options", "greeks", "intraday"]
+			"tags": ["index-options", "index-options", "greeks", "intraday"]
 		},
 		{
 			"name": "Future Options",
@@ -143,37 +143,37 @@
 			"name": "Alternative Data",
 			"folder": "alternative-data",
 			"description": "Ranks Equities with the Brain ML Ranking dataset and sizes positions from predicted returns via portfolio targets.",
-			"tags": ["alternative-data", "machine-learning", "ranking", "position-sizing"]
+			"tags": ["us-equities", "alternative-data", "machine-learning", "ranking", "position-sizing"]
 		},
 		{
 			"name": "Alternative Data Universe",
 			"folder": "alternative-data-universe",
 			"description": "Uses EODHD upcoming-earnings data to select Equities and trades straddles around earnings announcements.",
-			"tags": ["alternative-data", "universe", "options", "earnings"]
+			"tags": ["alternative-data", "universe", "equity-options", "earnings"]
 		},
 		{
 			"name": "AI",
 			"folder": "ai",
 			"description": "Trains a TensorFlow MLP weekly on warmed-up history to predict SPY direction.",
-			"tags": ["machine-learning", "tensorflow", "indicators"]
+			"tags": ["us-equities", "machine-learning", "tensorflow", "indicators"]
 		},
 		{
 			"name": "Trade Management",
 			"folder": "trade-management",
 			"description": "Implements a One-Cancels-Other (OCO) pattern with a market order entry and paired stop-loss and take-profit orders, where one of the paired orders cancels when the other fills.",
-			"tags": ["order-management", "oco-orders", "stop-loss", "take-profit", "order-tickets"]
+			"tags": ["us-equities", "order-management", "oco-orders", "stop-loss", "take-profit", "order-tickets"]
 		},
 		{
 			"name": "Financial Advisors",
 			"folder": "financial-advisors",
 			"description": "Demonstrates Interactive Brokers Financial Advisor group/account allocations via order properties along with live brokerage messages.",
-			"tags": ["live-trading", "interactive-brokers", "financial-advisor", "notifications", "order-properties", "brokerage-messages"]
+			"tags": ["us-equities", "live-trading", "interactive-brokers", "financial-advisor", "notifications", "order-properties", "brokerage-messages"]
 		},
 		{
 			"name": "Live Trading Features",
 			"folder": "live-trading-features",
 			"description": "Demonstrates live email and SMS notifications, brokerage disconnect/reconnect handling, and commands.",
-			"tags": ["live-trading", "notifications", "emails", "sms", "commands", "brokerage-messages"]
+			"tags": ["us-equities", "live-trading", "notifications", "emails", "sms", "commands", "brokerage-messages"]
 		}
 	]
 }
