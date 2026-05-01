@@ -1,3 +1,12 @@
 {
-		
+	"templates": 
+	[
+		{
+			"name": "Equities Static Universe",
+			"folder": "equities-static-universe",
+			"description":"Simple template with a fixed list of assets, indicators, and a scheduled event."
+			"tags": ["indicators", "scheduled-event", "equity"]
+		}
+	
+	]
 }
