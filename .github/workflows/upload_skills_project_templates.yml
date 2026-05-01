@@ -1,4 +1,4 @@
-name: Upload Skills to S3
+name: Upload Skills and Project Templates to S3
 
 on:
   push:
