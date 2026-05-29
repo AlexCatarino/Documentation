@@ -24,7 +24,7 @@ class BrainSentimentDataAlgorithm(QCAlgorithm):
         # Request the processed longer term sentiment score data for sentiment trading.
         self.aapl = self.add_equity("AAPL", Resolution.DAILY)
         self.dataset_symbol = self.add_data(BrainSentimentIndicator30Day, self.aapl).symbol
-        history = self.history(self.dataset_symbol, 100, Resolution.DAILY)
+        history = self.history(self.dataset_symbol, 252, Resolution.DAILY)
         self.debug(f"We got {len(history)} items from our history request for {self.dataset_symbol}")
         if history.empty:
             return

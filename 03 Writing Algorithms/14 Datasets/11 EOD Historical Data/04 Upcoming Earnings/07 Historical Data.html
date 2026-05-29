@@ -8,7 +8,7 @@
 <p>To get historical Upcoming Earnings data for a known security, call the <code class="csharp">History</code><code class="python">history</code> method with the type <code>EODHDUpcomingEarning</code> cast and the security <code>Symbol</code>.</p>
 
 <div class="section-example-container">
-<pre class="python">history = self.history[EODHDUpcomingEarnings](timedelta(100), Resolution.DAILY).loc[self._symbol]</pre>
+<pre class="python">history = self.history(EODHDUpcomingEarnings, timedelta(100), Resolution.DAILY).loc[self._symbol]</pre>
 <pre class="csharp">var history = History&lt;EODHDUpcomingEarnings&gt;(TimeSpan.FromDays(100), Resolution.Daily)
     .Select(x =&gt; x[_symbol])
     .ToList();</pre>

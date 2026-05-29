@@ -19,9 +19,9 @@ class CorporateBuybacksDataAlgorithm(QCAlgorithm):
         self._smart_insider_intention_data = self.add_data(SmartInsiderIntention, self._equity).symbol
         self._smart_insider_transaction_data = self.add_data(SmartInsiderTransaction, self._equity).symbol
         # Warm up custom data subscriptions with historical data.
-        history = self.history(self._smart_insider_intention_data, 365, Resolution.DAILY)
+        history = self.history(self._smart_insider_intention_data, timedelta(365), Resolution.DAILY)
         self.debug(f"We got {len(history)} items from our history request for intentions")
-        history = self.history(self._smart_insider_transaction_data, 365, Resolution.DAILY)
+        history = self.history(self._smart_insider_transaction_data, timedelta(365), Resolution.DAILY)
         self.debug(f"We got {len(history)} items from our history request for transactions")
 
     def on_data(self, data: Slice) -&gt; None:

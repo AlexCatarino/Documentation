@@ -29,7 +29,7 @@ class BrainMLRankingDataAlgorithm(QCAlgorithm):
             dataset_symbol = self.add_data(BrainStockRanking2Day, equity).symbol
             self.equity_by_dataset_symbol[dataset_symbol] = equity
             # Request historical ranking data to inspect subscription coverage.
-            history = self.history(dataset_symbol, 365, Resolution.DAILY)
+            history = self.history(dataset_symbol, 252, Resolution.DAILY)
             self.debug(f"We got {len(history)} items from our history request for {equity}")
 
     def on_data(self, data: Slice) -&gt; None:

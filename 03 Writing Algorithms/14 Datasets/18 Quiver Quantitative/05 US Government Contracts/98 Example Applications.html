@@ -128,11 +128,11 @@ class QuiverGovernmentContractAlphaModel(AlphaModel):
         for data_point in data_points:
             if not algorithm.securities[data_point.key.underlying].price:
                 continue
-            if data_point.key not in gov_contracts:
-                gov_contracts[data_point.key] = 0
+            if data_point.Key not in gov_contracts:
+                gov_contracts[data_point.Key] = 0
 
-            for gov_contract in data_point.value:
-                gov_contracts[data_point.key] += gov_contract.amount
+            for gov_contract in data_point.Value:
+                gov_contracts[data_point.Key] += gov_contract.amount
         
         # Long the top 10 highest government contract amount, predicting a higher expected income and return
         # Short the lowest 10 government contract amount, predicting a lower expected income and return
